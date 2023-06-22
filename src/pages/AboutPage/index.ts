@@ -1,2 +1,3 @@
-import { AboutPageLazy } from "./ui/AboutPage.lazy";
+import { AboutPageLazy } from './ui/AboutPage.lazy';
+
 export { AboutPageLazy as AboutPage };

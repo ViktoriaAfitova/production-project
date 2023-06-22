@@ -1,11 +1,11 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import style from "./AppLink.module.scss";
-import { Link, LinkProps } from "react-router-dom";
-import { FC } from "react";
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Link, LinkProps } from 'react-router-dom';
+import { FC } from 'react';
+import style from './AppLink.module.scss';
 
 export enum AppLinkColor {
-  Primary = "primary",
-  Secondary = "secondary",
+  Primary = 'primary',
+  Secondary = 'secondary',
 }
 
 interface AppLinkProps extends LinkProps {
@@ -14,7 +14,9 @@ interface AppLinkProps extends LinkProps {
 }
 
 export const AppLink: FC<AppLinkProps> = (props) => {
-  const { to, className, children, color = AppLinkColor.Primary } = props;
+  const {
+    to, className, children, color = AppLinkColor.Primary,
+  } = props;
 
   return (
     <Link
