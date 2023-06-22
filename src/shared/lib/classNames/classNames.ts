@@ -3,7 +3,7 @@ type Modes = Record<string, boolean | string>;
 export function classNames(
   mainClass: string,
   modes?: Modes,
-  additional?: string[],
+  additional?: string[]
 ): string {
   return [
     mainClass,
@@ -11,9 +11,9 @@ export function classNames(
     ...Object.entries(modes)
       .filter(([_, value]) => Boolean(value))
       .map(([className]) => className),
-  ].join(' ');
+  ].join(" ");
 }
 
-classNames('remove-button', { hovered: false, selectable: true, red: false }, [
-  'padding',
+classNames("remove-button", { hovered: false, selectable: true, red: false }, [
+  "padding",
 ]);
