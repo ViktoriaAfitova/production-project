@@ -2,5 +2,8 @@
   "About": "About",
   "Home": "Home",
   "Language": "Language",
-  "Page Not Found": "Page Not Found"
+  "Page Not Found": "Page Not Found",
+  "Reload page": "Reload page",
+  "Something went wrong": "Something went wrong",
+  "throw Error": "throw Error"
 }
