@@ -6,6 +6,7 @@ import style from './AppLink.module.scss';
 export enum AppLinkColor {
   Primary = 'primary',
   Secondary = 'secondary',
+  Red = 'red',
 }
 
 interface AppLinkProps extends LinkProps {
