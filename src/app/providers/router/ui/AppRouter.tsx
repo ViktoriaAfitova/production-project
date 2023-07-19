@@ -1,7 +1,7 @@
-import { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { routeConfig } from 'shared/config/routeConfig/routeConfig';
-import { Loader } from 'widgets/Loader/ui/Loader';
+import { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import { routeConfig } from "shared/config/routeConfig/routeConfig";
+import { Loader } from "widgets/Loader/ui/Loader";
 
 function AppRouter() {
   return (
@@ -10,11 +10,11 @@ function AppRouter() {
         <Route
           key={path}
           path={path}
-          element={(
+          element={
             <Suspense fallback={<Loader />}>
               <div className="page-wrapper">{element}</div>
             </Suspense>
-          )}
+          }
         />
       ))}
     </Routes>
