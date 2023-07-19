@@ -1,5 +1,5 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import style from "./Navbar.module.scss";
+import { classNames } from 'shared/lib/classNames/classNames';
+import style from './Navbar.module.scss';
 
 interface NavbarProps {
   className?: string;
