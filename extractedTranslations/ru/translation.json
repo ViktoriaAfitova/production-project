@@ -1,9 +1,11 @@
 {
   "About": "About",
+  "Hello! I'm a Modal window": "Hello! I'm a Modal window",
   "Home": "Home",
   "Language": "Language",
   "Page Not Found": "Page Not Found",
   "Reload page": "Reload page",
+  "Sign in": "Sign in",
   "Something went wrong": "Something went wrong",
   "throw Error": "throw Error",
   "toggle": "toggle"
