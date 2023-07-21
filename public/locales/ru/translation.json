@@ -3,5 +3,7 @@
   "Page Not Found": "Страница не найдена",
   "Something went wrong": "Произошла непредвиденная ошибка",
   "Reload page": "Обновить страницу",
-  "abbreviations": "Ru"
+  "abbreviations": "Ru",
+  "increment": "увеличить",
+  "decrement": "уменьшить"
 }

@@ -3,5 +3,7 @@
   "Page Not Found": "Page Not Found",
   "Something went wrong": "Something went wrong",
   "Reload page": "Reload page",
-  "abbreviations": "En"
+  "abbreviations": "En",
+  "increment": "increment",
+  "decrement": "decrement"
 }
