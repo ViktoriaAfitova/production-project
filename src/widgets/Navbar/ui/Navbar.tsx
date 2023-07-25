@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { useTranslation } from 'react-i18next';
 import { useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/AuthByUsername';
 import style from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -14,23 +14,24 @@ export function Navbar({ className }: NavbarProps) {
 
   const [authModalVisible, setAuthModalVisible] = useState(false);
 
-  const toggleAuthModal = useCallback(() => {
-    setAuthModalVisible(!authModalVisible);
-  }, [authModalVisible]);
+  const onCloseModal = useCallback(() => {
+    setAuthModalVisible(false);
+  }, []);
+
+  const onShowModal = useCallback(() => {
+    setAuthModalVisible(true);
+  }, []);
 
   return (
     <div className={classNames(style.navbar, {}, [className])}>
       <Button
         theme={ButtonTheme.ClearInverted}
         className={style.links}
-        onClick={toggleAuthModal}
+        onClick={onShowModal}
       >
         {t('Sign in')}
       </Button>
-      <Modal isVisible={authModalVisible} onClose={toggleAuthModal}>
-        {/* eslint-disable-next-line */}
-        {t("Hello! I'm a Modal window")}
-      </Modal>
+      <LoginModal isVisible={authModalVisible} onClose={onCloseModal} />
     </div>
   );
 }

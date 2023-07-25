@@ -5,5 +5,7 @@
   "Reload page": "Обновить страницу",
   "abbreviations": "Ru",
   "increment": "увеличить",
-  "decrement": "уменьшить"
+  "decrement": "уменьшить",
+  "Username": "Имя",
+  "Password": "Пароль"
 }
