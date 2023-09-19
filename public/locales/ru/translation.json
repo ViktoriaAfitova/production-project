@@ -7,5 +7,9 @@
   "increment": "увеличить",
   "decrement": "уменьшить",
   "Username": "Имя",
-  "Password": "Пароль"
+  "Password": "Пароль",
+  "Sign in": "Войти",
+  "Login Form": "Форма входа",
+  "You entered an incorrect username or password": "Вы ввели неверный логин или пароль",
+  "Log out": "Выйти"
 }

@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { LoginForm } from './LoginForm';
 
 export default {
@@ -11,5 +12,20 @@ export default {
 
 const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Login = Template.bind({});
+Login.args = {};
+Login.decorators = [StoreDecorator({
+  loginForm: { username: '123', password: 'asd' },
+})];
+
+export const Error = Template.bind({});
+Error.args = {};
+Error.decorators = [StoreDecorator({
+  loginForm: { username: '123', password: 'asd', error: 'ERROR' },
+})];
+
+export const Loading = Template.bind({});
+Loading.args = {};
+Loading.decorators = [StoreDecorator({
+  loginForm: { isLoading: true },
+})];
