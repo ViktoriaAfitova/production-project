@@ -55,7 +55,12 @@ export function Navbar({ className }: NavbarProps) {
       >
         {t('Sign in')}
       </Button>
-      <LoginModal isVisible={authModalVisible} onClose={onCloseModal} />
+      {authModalVisible && (
+        <LoginModal
+          isVisible={authModalVisible}
+          onClose={onCloseModal}
+        />
+      )}
     </div>
   );
 }
