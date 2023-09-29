@@ -1,7 +1,7 @@
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
-import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { loginReducer } from 'features/AuthByUsername/model/slice';
 
 const defaultReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   loginForm: loginReducer,

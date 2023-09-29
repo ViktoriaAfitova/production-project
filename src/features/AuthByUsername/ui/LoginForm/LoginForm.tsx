@@ -4,8 +4,8 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
+import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice';
+
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import i18n from 'shared/config/i18n/i18n';
 import {
@@ -15,6 +15,7 @@ import {
   selectUsername,
 } from 'features/AuthByUsername/model/selectors';
 import { DynamicModuleLoader, ReducerList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { loginByUsername } from 'features/AuthByUsername/model/thunk';
 import style from './LoginForm.module.scss';
 
 export interface LoginFormProps {
