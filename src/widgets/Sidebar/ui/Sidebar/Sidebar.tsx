@@ -1,26 +1,30 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher/LanguageSwitcher';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import { useTranslation } from 'react-i18next';
-import { AppLink, AppLinkColor } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import HomeIcon from 'shared/assets/icons/homeIcon.svg';
-import AboutIcon from 'shared/assets/icons/aboutIcon.svg';
 import style from './Sidebar.module.scss';
+import { SidebarLinksList } from './model/types';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
   className?: string;
 }
 
-export function Sidebar({ className }: SidebarProps) {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
-  const { t } = useTranslation();
 
   const toggleCollapsed = () => {
     setCollapsed((prevState) => !prevState);
   };
+
+  const itemsList = useMemo(() => SidebarLinksList.map((link) => (
+    <SidebarItem
+      link={link}
+      collapsed={collapsed}
+      key={link.path}
+    />
+  )), [collapsed]);
 
   return (
     <div
@@ -40,18 +44,7 @@ export function Sidebar({ className }: SidebarProps) {
         {collapsed ? '>' : '<'}
       </Button>
       <div className={style.links}>
-        <AppLink
-          color={AppLinkColor.Secondary}
-          to={RoutePath.home}
-          className={style.link}
-        >
-          <HomeIcon className={style.icon} />
-          <span className={style.text}>{t('Home')}</span>
-        </AppLink>
-        <AppLink to={RoutePath.about} className={style.link}>
-          <AboutIcon className={style.icon} />
-          <span className={style.text}>{t('About')}</span>
-        </AppLink>
+        {itemsList}
       </div>
       <div className={style.switchers}>
         <ThemeSwitcher />
@@ -62,4 +55,4 @@ export function Sidebar({ className }: SidebarProps) {
       </div>
     </div>
   );
-}
+});

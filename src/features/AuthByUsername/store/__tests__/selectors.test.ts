@@ -2,7 +2,7 @@ import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import {
   selectLoading, selectError, selectPassword, selectUsername,
-} from '../selectors';
+} from '../../store/selectors';
 
 describe('selectors', () => {
   test('should return value', () => {

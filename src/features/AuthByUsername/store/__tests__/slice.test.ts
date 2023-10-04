@@ -1,6 +1,6 @@
 import { DeepPartial } from '@reduxjs/toolkit';
-import { LoginSchema } from '../types';
-import { loginActions, loginReducer } from '../slice';
+import { LoginSchema } from '../../store/types';
+import { loginActions, loginReducer } from '../../store/slice';
 
 describe('slice', () => {
   test('set usernsme', () => {

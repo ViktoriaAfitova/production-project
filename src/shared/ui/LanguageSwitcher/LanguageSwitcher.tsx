@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
 import { Button, ButtonTheme } from '../Button/Button';
 
 interface LanguageSwitcherProps {
@@ -7,7 +8,7 @@ interface LanguageSwitcherProps {
   short?: boolean;
 }
 
-export function LanguageSwitcher({ className, short }: LanguageSwitcherProps) {
+export const LanguageSwitcher = memo(({ className, short }: LanguageSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const toggleTranslation = () => {
@@ -23,4 +24,4 @@ export function LanguageSwitcher({ className, short }: LanguageSwitcherProps) {
       {t(short ? 'abbreviations' : 'Language')}
     </Button>
   );
-}
+});

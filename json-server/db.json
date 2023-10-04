@@ -15,5 +15,13 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstName": "Viki",
+    "lastName": "Afitova",
+    "currency": "BYN",
+    "country": "Belarus",
+    "city": "Minsk",
+    "username": "admin",
+    "avatar": "https://cdn-icons-png.flaticon.com/512/6777/6777009.png"
+  }
 }
