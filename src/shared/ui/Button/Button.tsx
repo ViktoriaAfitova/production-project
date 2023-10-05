@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Modes, classNames } from 'shared/lib/classNames/classNames';
 import { ButtonHTMLAttributes, ReactNode, memo } from 'react';
 import style from './Button.module.scss';
 
@@ -27,14 +27,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = memo(({
   className,
-  theme,
+  theme = ButtonTheme.Outline,
   children,
   square,
   size = ButtonSize.M,
   disabled,
   ...otherProps
 }: ButtonProps) => {
-  const modes: Record<string, boolean> = {
+  const modes: Modes = {
     [style[theme]]: true,
     [style.square]: square,
     [style[size]]: true,

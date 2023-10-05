@@ -1,4 +1,6 @@
 {
+  "Home": "Home",
+  "About": "About",
   "Language": "English",
   "Page Not Found": "Page Not Found",
   "Something went wrong": "Something went wrong",
@@ -11,5 +13,7 @@
   "Sign in": "Sign in",
   "Login Form": "Login Form",
   "You entered an incorrect username or password": "You entered an incorrect username or password",
-  "Log out": "Log out"
+  "Log out": "Log out",
+  "Profile": "Profile",
+  "Edit": "Edit"
 }

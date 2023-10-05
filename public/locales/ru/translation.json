@@ -1,4 +1,6 @@
 {
+  "Home": "Главная",
+  "About": "О сайте",
   "Language": "Русский",
   "Page Not Found": "Страница не найдена",
   "Something went wrong": "Произошла непредвиденная ошибка",
@@ -11,5 +13,7 @@
   "Sign in": "Войти",
   "Login Form": "Форма входа",
   "You entered an incorrect username or password": "Вы ввели неверный логин или пароль",
-  "Log out": "Выйти"
+  "Log out": "Выйти",
+  "Profile": "Профайл",
+  "Edit": "Редактировать"
 }

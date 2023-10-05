@@ -1,5 +1,6 @@
 {
   "About": "About",
+  "Edit": "Edit",
   "Hello! I'm a Modal window": "Hello! I'm a Modal window",
   "Home": "Home",
   "Language": "Language",
@@ -14,6 +15,8 @@
   "Something went wrong": "Something went wrong",
   "Username": "Username",
   "You entered an incorrect username or password": "",
+  "Your Firstname": "Your Firstname",
+  "Your Lastame": "Your Lastame",
   "decrement": "decrement",
   "increment": "increment",
   "throw Error": "throw Error",
