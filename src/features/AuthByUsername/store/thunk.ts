@@ -3,7 +3,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { User, userActions } from 'entities/User';
 import { USER_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
 
-export interface LoginByUsernameProps {
+interface LoginByUsernameProps {
   username: string;
   password: string;
 }
@@ -26,7 +26,6 @@ export const loginByUsername = createAsyncThunk<
 
       localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
       dispatch(userActions.setAuthData(response.data));
-
       return response.data;
     } catch (error) {
       return rejectWithValue('error');

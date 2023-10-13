@@ -17,15 +17,13 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-export const Modal = (props: ModalProps) => {
-  const {
-    className,
-    children,
-    isVisible,
-    onClose,
-    lazy,
-  } = props;
-
+export const Modal = ({
+  className,
+  children,
+  isVisible,
+  onClose,
+  lazy,
+}: ModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;

@@ -1,4 +1,13 @@
 {
   "Profile": "Profile",
-  "Edit": "Edit"
+  "Edit": "Edit",
+  "Something went wrong": "Something went wrong",
+  "Reload the page": "Reload the page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Your age": "Your age",
+  "Your city": "Your city",
+  "Enter your username": "Enter your username",
+  "Your country": "Your country",
+  "Avatar": "Avatar"
 }
