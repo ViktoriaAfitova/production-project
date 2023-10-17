@@ -9,5 +9,10 @@
   "Your city": "Ваш город",
   "Enter your username": "введите имя пользователя",
   "Your country": "Ваша страна",
-  "Avatar": "Фото"
+  "Avatar": "Фото",
+  "Server error": "Ошибка сервера",
+  "Required firstname and lastname": "Имя и фамилия обязательны",
+  "Incorrect age": "Некорректный возраст",
+  "Incorrect country": "Некорректный регион",
+  "Data not provided": "Данные не указаны"
 }
