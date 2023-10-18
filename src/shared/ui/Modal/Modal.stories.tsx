@@ -24,4 +24,4 @@ Dark.args = {
   isVisible: true,
   children: "Hello! I'm a Modal window",
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+// Dark.decorators = [ThemeDecorator(Theme.DARK)];

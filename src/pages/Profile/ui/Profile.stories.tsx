@@ -36,17 +36,19 @@ Light.decorators = [StoreDecorator({
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  profile: {
-    form: {
-      firstName: 'Viki',
-      lastName: 'Afitova',
-      age: 37,
-      currency: Currency.BYN,
-      country: Country.Belarus,
-      city: 'Minsk',
-      username: 'admin',
-      avatar,
+Dark.decorators = [
+  // ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    profile: {
+      form: {
+        firstName: 'Viki',
+        lastName: 'Afitova',
+        age: 37,
+        currency: Currency.BYN,
+        country: Country.Belarus,
+        city: 'Minsk',
+        username: 'admin',
+        avatar,
+      },
     },
-  },
-})];
+  })];
