@@ -2,9 +2,9 @@ import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { Currency } from 'entities/Currency/model/types/currency';
 import { Country } from 'entities/Country/model/types/country';
 import { fetchProfileData } from '../model/services/fetchProfileData/fetchProfileData';
-import { validateProfileData } from '../model/services/validateProfileData.ts/validateProfileData';
 import { ValidateProfileError } from '../model/types/profile';
 import { updateProfileData } from '../model/services/updateProfileData/updateProfileData';
+import { validateProfileData } from '../model/services/validateProfileData/validateProfileData';
 
 const data = {
   firstName: 'Viki',
