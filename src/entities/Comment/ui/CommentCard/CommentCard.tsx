@@ -1,0 +1,37 @@
+import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Text } from 'shared/ui/Text/Text';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import style from './CommentCard.module.scss';
+import { Comment } from '../../model/types/comment';
+
+interface CommentCardProps {
+  className?: string;
+  comment: Comment;
+  isLoading?: boolean;
+}
+
+export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
+  if (isLoading) {
+    return (
+      <div className={classNames(style.comment, {}, [className])}>
+        <div className={style.header}>
+          <Skeleton width={30} height={30} border="50%" />
+          <Skeleton height={16} width={100} className={style.username} />
+        </div>
+        <Skeleton width="100%" height={50} className={style.text} />
+      </div>
+    );
+  }
+
+  return (
+    <div className={classNames(style.comment, {}, [className])}>
+      <div className={style.header}>
+        {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
+        <Text className={style.username} title={comment.user.username} />
+      </div>
+      <Text className={style.text} text={comment.text} />
+    </div>
+  );
+});
