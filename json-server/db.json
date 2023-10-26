@@ -102,6 +102,18 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "qqq",
+      "id": "nkFc2VK"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "llll",
+      "id": "lVsM8Y0"
     }
   ],
   "users": [
@@ -115,19 +127,33 @@
     {
       "id": "2",
       "username": "user",
-      "password": "123",
+      "password": "12345",
       "role": "USER",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
-    "firstName": "Viki",
-    "lastName": "Afitova",
-    "age": 15,
-    "currency": "BYN",
-    "country": "Belarus",
-    "city": "Minsk",
-    "username": "admin",
-    "avatar": "https://cdn-icons-png.flaticon.com/512/6777/6777009.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Viki",
+      "lastName": "Afitova",
+      "age": 15,
+      "currency": "BYN",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "admin",
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+    },
+    {
+      "id": "2",
+      "firstName": "Viki2 vvvv",
+      "lastName": "Afitova2",
+      "age": 16,
+      "currency": "BYN",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "user",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ]
 }

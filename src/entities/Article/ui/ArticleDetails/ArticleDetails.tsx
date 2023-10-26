@@ -6,7 +6,7 @@ import { fetchArticleById } from 'entities/Article/model/services/fetchArticleBy
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import {
-  selectArticleDetailsArticle,
+  selectArticleDetails,
   selectArticleDetailsError,
   selectArticleDetailsIsLoading,
 } from 'entities/Article/model/selectors/selectors';
@@ -35,7 +35,7 @@ const reducers: ReducerList = {
 export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
-  const article = useSelector(selectArticleDetailsArticle);
+  const article = useSelector(selectArticleDetails);
   const isLoading = useSelector(selectArticleDetailsIsLoading);
   // const isLoading = true;
   const error = useSelector(selectArticleDetailsError);

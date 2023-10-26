@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import {
-  selectArticleDetailsArticle, selectArticleDetailsIsLoading, selectArticleDetailsError,
+  selectArticleDetails, selectArticleDetailsIsLoading, selectArticleDetailsError,
 } from '../model/selectors/selectors';
 
 describe('selectors', () => {
@@ -15,11 +15,11 @@ describe('selectors', () => {
         data,
       },
     };
-    expect(selectArticleDetailsArticle(state as StateSchema)).toEqual(data);
+    expect(selectArticleDetails(state as StateSchema)).toEqual(data);
   });
   test('should work with empty state data', () => {
     const state: DeepPartial<StateSchema> = {};
-    expect(selectArticleDetailsArticle(state as StateSchema)).toEqual(undefined);
+    expect(selectArticleDetails(state as StateSchema)).toEqual(undefined);
   });
 
   test('should return error', () => {

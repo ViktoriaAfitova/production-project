@@ -1,16 +1,18 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { CommentList } from 'entities/Comment';
 import { Text } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducerList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useDispatch, useSelector } from 'react-redux';
+import { CommentForm } from 'features/CommentForm';
 import style from './ArticleDetails.module.scss';
 import { articleDetailsCommentsReducer, selectArticleComments } from '../model/slice/articleDetailsCommentSlice';
 import { selectArticleCommentsIsLoading } from '../model/selectors/selectors';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { articleComment } from '../model/services/ArticleComment/articleComment';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -26,6 +28,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
   const dispatch = useDispatch();
   const articleComments = useSelector(selectArticleComments.selectAll);
   const articleCommentsIsLoading = useSelector(selectArticleCommentsIsLoading);
+
+  const onSendText = useCallback((text: string) => {
+    dispatch(articleComment(text));
+  }, [dispatch]);
 
   // useInitialEffect from hooks
   useEffect(() => {
@@ -45,6 +51,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
       <div className={classNames(style.articleDetails, {}, [className])}>
         <ArticleDetails id={id} />
         <Text className={style.title} title={t('Comments')} />
+        <CommentForm onSendText={onSendText} />
         <CommentList
           isLoading={articleCommentsIsLoading}
           comments={articleComments}
