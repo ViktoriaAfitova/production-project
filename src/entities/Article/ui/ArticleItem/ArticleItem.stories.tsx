@@ -1,16 +1,21 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-import style from './Articles.module.scss';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-interface ArticlesProps {
-  className?: string;
-}
+import { ArticleItem } from './ArticleItem';
+import { Article, ArticleView } from '../../model/types/article';
+
+export default {
+  title: 'entities/Article/ArticleItem',
+  component: ArticleItem,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticleItem>;
+
+const Template: ComponentStory<typeof ArticleItem> = (args) => <ArticleItem {...args} />;
 
 const article = {
   id: '1',
-  title: 'Javascript news',
+  title: 'Javascript news asfasjf asfjkask f',
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
@@ -22,6 +27,9 @@ const article = {
   },
   type: [
     'IT',
+    'SCIENCE',
+    'POLITICS',
+    'ECONOMICS',
   ],
   blocks: [
     {
@@ -85,25 +93,14 @@ const article = {
   ],
 } as Article;
 
-const ArticlesPage = ({ className }: ArticlesProps) => {
-  const { t } = useTranslation('article');
-
-  return (
-    <div className={classNames(style.articles, {}, [className])}>
-      <ArticleList
-        isLoading
-        articles={
-          new Array(16)
-            .fill(0)
-            .map((item, index) => ({
-              ...article,
-              id: String(index),
-            }))
-        }
-        view={ArticleView.VIEW_BIG}
-      />
-    </div>
-  );
+export const Big = Template.bind({});
+Big.args = {
+  view: ArticleView.VIEW_BIG,
+  article,
 };
 
-export default memo(ArticlesPage);
+export const Small = Template.bind({});
+Small.args = {
+  view: ArticleView.VIEW_SMALL,
+  article,
+};

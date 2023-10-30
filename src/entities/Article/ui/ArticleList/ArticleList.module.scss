@@ -1,0 +1,14 @@
+.VIEW_BIG {
+  .card {
+    margin-bottom: 30px;
+  }
+}
+
+.VIEW_SMALL {
+  display: flex;
+  flex-wrap: wrap;
+
+  .card {
+    margin: 0 30px 30px 0;
+  }
+}

@@ -4,6 +4,7 @@
   "Article not found": "Article not found",
   "Articles": "Articles",
   "Avatar": "Avatar",
+  "Back to articles": "Back to articles",
   "Cancel": "Cancel",
   "Comment is absent": "Comment is absent",
   "Comments": "Comments",
@@ -25,6 +26,13 @@
   "Page Not Found": "Page Not Found",
   "Password": "Password",
   "Profile": "Profile",
+  "Read more": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Reload page": "Reload page",
   "Reload the page": "Reload the page",
   "Required firstname and lastname": "Required firstname and lastname",
