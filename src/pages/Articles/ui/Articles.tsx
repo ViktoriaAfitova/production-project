@@ -9,9 +9,11 @@ import { Page } from 'shared/ui/Page/Page';
 import { Text } from 'shared/ui/Text/Text';
 import style from './Articles.module.scss';
 import { articlesActions, articlesReducer, selectArticles } from '../model/slice/articlesSlice';
-import { fetchArticles } from '../model/services/fetchArticles/fetchArticles';
-import { selectError, selectIsLoading, selectView } from '../model/slectors/selectors';
+import {
+  selectError, selectIsLoading, selectView,
+} from '../model/slectors/selectors';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticles } from '../model/services/initArticles/initArticles';
 
 interface ArticlesProps {
   className?: string;
@@ -38,10 +40,7 @@ const ArticlesPage = ({ className }: ArticlesProps) => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(articlesActions.initialState());
-    dispatch(fetchArticles({
-      page: 1,
-    }));
+    dispatch(initArticles());
   }, [dispatch]);
 
   if (error) {
@@ -49,7 +48,7 @@ const ArticlesPage = ({ className }: ArticlesProps) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames(style.articles, {}, [className])}

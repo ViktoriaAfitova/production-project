@@ -38,6 +38,7 @@ export const ArticleViewSwitcher = memo(({ className, view, onClickView }: Artic
         <Button
           theme={ButtonTheme.Clear}
           onClick={onClick(viewType.view)}
+          key={viewType.view}
         >
           <Icon
             Svg={viewType.icon}

@@ -33,6 +33,7 @@ export const CommentList = memo(({ className, comments, isLoading }: CommentList
             isLoading={isLoading}
             className={style.comment}
             comment={comment}
+            key={comment.id}
           />
         ))
         : <Text text={t('Comment is absent')} />}

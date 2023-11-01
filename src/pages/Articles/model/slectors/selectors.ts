@@ -7,3 +7,4 @@ export const selectView = (state: StateSchema) => state.articles?.view || Articl
 export const selectPage = (state: StateSchema) => state.articles?.page || 1;
 export const selectLimit = (state: StateSchema) => state.articles?.limit || 9;
 export const selectHasMore = (state: StateSchema) => state.articles?.hasMore;
+export const selectInited = (state: StateSchema) => state.articles?._inited;
