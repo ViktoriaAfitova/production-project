@@ -5,10 +5,13 @@ import { ArticleList, ArticleView, ArticleViewSwitcher } from 'entities/Article'
 import { DynamicModuleLoader, ReducerList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { Page } from 'shared/ui/Page/Page';
+import { Text } from 'shared/ui/Text/Text';
 import style from './Articles.module.scss';
 import { articlesActions, articlesReducer, selectArticles } from '../model/slice/articlesSlice';
 import { fetchArticles } from '../model/services/fetchArticles/fetchArticles';
 import { selectError, selectIsLoading, selectView } from '../model/slectors/selectors';
+import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 interface ArticlesProps {
   className?: string;
@@ -30,21 +33,34 @@ const ArticlesPage = ({ className }: ArticlesProps) => {
     dispatch(articlesActions.setView(view));
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(fetchArticles());
-    dispatch(articlesActions.initialState());
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(articlesActions.initialState());
+    dispatch(fetchArticles({
+      page: 1,
+    }));
+  }, [dispatch]);
+
+  if (error) {
+    return <Text text={t('Something went wrong')} />;
+  }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(style.articles, {}, [className])}>
+      <Page
+        onScrollEnd={onLoadNextPart}
+        className={classNames(style.articles, {}, [className])}
+      >
         <ArticleViewSwitcher view={view} onClickView={onChangeView} />
         <ArticleList
           isLoading={isLoading}
           articles={articles}
           view={view}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

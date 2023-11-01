@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CommentForm } from 'features/CommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import style from './ArticleDetails.module.scss';
 import { articleDetailsCommentsReducer, selectArticleComments } from '../model/slice/articleDetailsCommentSlice';
 import { selectArticleCommentsIsLoading } from '../model/selectors/selectors';
@@ -47,15 +48,15 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
 
   if (!id) {
     return (
-      <div className={classNames(style.articleDetails, {}, [className])}>
+      <Page className={classNames(style.articleDetails, {}, [className])}>
         {t('Article not found')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(style.articleDetails, {}, [className])}>
+      <Page className={classNames(style.articleDetails, {}, [className])}>
         <Button
           onClick={onBackToArticles}
           theme={ButtonTheme.Outline}
@@ -69,7 +70,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
           isLoading={articleCommentsIsLoading}
           comments={articleComments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
