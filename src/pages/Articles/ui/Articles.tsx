@@ -5,7 +5,7 @@ import { ArticleList, ArticleView, ArticleViewSwitcher } from 'entities/Article'
 import { DynamicModuleLoader, ReducerList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { Text } from 'shared/ui/Text/Text';
 import style from './Articles.module.scss';
 import { articlesActions, articlesReducer, selectArticles } from '../model/slice/articlesSlice';

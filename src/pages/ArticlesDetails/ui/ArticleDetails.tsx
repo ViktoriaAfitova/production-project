@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CommentForm } from 'features/CommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import style from './ArticleDetails.module.scss';
 import { articleDetailsCommentsReducer, selectArticleComments } from '../model/slice/articleDetailsCommentSlice';
 import { selectArticleCommentsIsLoading } from '../model/selectors/selectors';

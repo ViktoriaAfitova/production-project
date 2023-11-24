@@ -7,16 +7,16 @@ import { CounterSchema } from 'entities/Counter/model/types/counterSchema';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
-import { NavigateOptions } from 'react-router';
-import { To } from 'history';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticlesDetails';
 import { CommentFormSchema } from 'features/CommentForm';
 import { ArticlesSchema } from 'pages/Articles';
+import { ScrollSchema } from 'widgets/Scroll/model/types/types';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  scroll: ScrollSchema;
 
   // async reducers
   loginForm?: LoginSchema;

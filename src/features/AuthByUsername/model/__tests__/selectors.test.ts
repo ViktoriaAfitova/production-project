@@ -1,7 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import {
   selectLoading, selectError, selectPassword, selectUsername,
-} from '../../store/selectors';
+} from '../selectors';
 
 describe('selectors', () => {
   test('should return value', () => {
