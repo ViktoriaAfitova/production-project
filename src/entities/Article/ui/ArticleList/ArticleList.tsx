@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { ArticleItem } from 'entities/Article/ui/ArticleItem/ArticleItem';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 import style from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleItemSkeleton } from '../ArticleItem/ArticleItemSkeleton';
@@ -35,6 +36,14 @@ export const ArticleList = memo(({
       className={style.card}
     />
   );
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={classNames(style.articleList, {}, [className, style[view]])}>
+        <Text size={TextSize.L} title={t('Nothing not found')} />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(style.articleList, {}, [className, style[view]])}>

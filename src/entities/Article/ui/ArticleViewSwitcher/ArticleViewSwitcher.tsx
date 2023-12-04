@@ -8,7 +8,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
 import style from './ArticleViewSwitcher.module.scss';
 
-interface ArticleViewSwitcherProps {
+export interface ArticleViewSwitcherProps {
   className?: string;
   view: ArticleView;
   onClickView?: (view: ArticleView) => void;

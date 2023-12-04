@@ -2,5 +2,13 @@
   "Article not found": "Article not found",
   "Comments": "Comments",
   "Enter comment text": "Enter comment text",
-  "Send": "Send"
+  "Send": "Send",
+  "Sort by": "Sort by",
+  "by": "by",
+  "ascending": "ascending",
+  "descending": "descending",
+  "by creation date": "by creation date",
+  "by title": "by title",
+  "by number of views": "by number of views",
+  "Nothing not found": "Nothing not found"
 }

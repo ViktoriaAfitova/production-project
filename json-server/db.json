@@ -14,11 +14,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Javascript news СВЕЖАЯ",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.04.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -88,8 +88,8 @@
       "id": "2",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
-      "views": 1022,
+      "img": "https://img2.freepng.ru/20180804/zxy/kisspng-python-computer-icons-programmer-javascript-progra-tweet-on-twitter-trend-by-gp_pulipaka-twitter-tre-5b6648da225a38.5188591515334299781407.jpg",
+      "views": 5204,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -110,11 +110,11 @@
     },
     {
       "id": "3",
-      "title": "Kotlin news",
+      "title": "Kotlin news 2019",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 94002,
+      "createdAt": "26.02.2019",
       "userId": "1",
       "type": [
         "IT"
@@ -136,7 +136,7 @@
       "id": "4",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
+      "img": "https://img2.freepng.ru/20180804/zxy/kisspng-python-computer-icons-programmer-javascript-progra-tweet-on-twitter-trend-by-gp_pulipaka-twitter-tre-5b6648da225a38.5188591515334299781407.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -184,7 +184,7 @@
       "id": "6",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
+      "img": "https://img2.freepng.ru/20180804/zxy/kisspng-python-computer-icons-programmer-javascript-progra-tweet-on-twitter-trend-by-gp_pulipaka-twitter-tre-5b6648da225a38.5188591515334299781407.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -213,7 +213,7 @@
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -230,14 +230,14 @@
     },
     {
       "id": "8",
-      "title": "Python news",
+      "title": "TypeScript news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
-      "views": 1022,
+      "img": "https://miro.medium.com/v2/resize:fit:1024/1*Gh4eaAQU432ZQH7qsVbJ_A.png",
+      "views": 102222,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -280,7 +280,7 @@
       "id": "10",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
+      "img": "https://img2.freepng.ru/20180804/zxy/kisspng-python-computer-icons-programmer-javascript-progra-tweet-on-twitter-trend-by-gp_pulipaka-twitter-tre-5b6648da225a38.5188591515334299781407.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -328,7 +328,7 @@
       "id": "12",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
+      "img": "https://img2.freepng.ru/20180804/zxy/kisspng-python-computer-icons-programmer-javascript-progra-tweet-on-twitter-trend-by-gp_pulipaka-twitter-tre-5b6648da225a38.5188591515334299781407.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -376,7 +376,7 @@
       "id": "14",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
+      "img": "https://img2.freepng.ru/20180804/zxy/kisspng-python-computer-icons-programmer-javascript-progra-tweet-on-twitter-trend-by-gp_pulipaka-twitter-tre-5b6648da225a38.5188591515334299781407.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -424,7 +424,7 @@
       "id": "16",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
+      "img": "https://img2.freepng.ru/20180804/zxy/kisspng-python-computer-icons-programmer-javascript-progra-tweet-on-twitter-trend-by-gp_pulipaka-twitter-tre-5b6648da225a38.5188591515334299781407.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",

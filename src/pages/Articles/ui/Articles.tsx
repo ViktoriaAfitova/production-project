@@ -1,19 +1,21 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useEffect } from 'react';
-import { ArticleList, ArticleView, ArticleViewSwitcher } from 'entities/Article';
+import { ArticleList } from 'entities/Article';
 import { DynamicModuleLoader, ReducerList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'widgets/Page/Page';
 import { Text } from 'shared/ui/Text/Text';
+import { useSearchParams } from 'react-router-dom';
 import style from './Articles.module.scss';
-import { articlesActions, articlesReducer, selectArticles } from '../model/slice/articlesSlice';
+import { articlesReducer, selectArticles } from '../model/slice/articlesSlice';
 import {
   selectError, selectIsLoading, selectView,
 } from '../model/slectors/selectors';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticles } from '../model/services/initArticles/initArticles';
+import { ArticlesFilter } from '../components/filter/ui/ArticlesFilter';
 
 interface ArticlesProps {
   className?: string;
@@ -30,18 +32,15 @@ const ArticlesPage = ({ className }: ArticlesProps) => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const view = useSelector(selectView);
-
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlesActions.setView(view));
-  }, [dispatch]);
+  let [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(initArticles());
-  }, [dispatch]);
+    dispatch(initArticles(searchParams));
+  }, [dispatch, searchParams]);
 
   if (error) {
     return <Text text={t('Something went wrong')} />;
@@ -53,8 +52,9 @@ const ArticlesPage = ({ className }: ArticlesProps) => {
         onScrollEnd={onLoadNextPart}
         className={classNames(style.articles, {}, [className])}
       >
-        <ArticleViewSwitcher view={view} onClickView={onChangeView} />
+        <ArticlesFilter />
         <ArticleList
+          className={style.list}
           isLoading={isLoading}
           articles={articles}
           view={view}

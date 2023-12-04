@@ -6,6 +6,8 @@ import {
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article, ArticleView } from 'entities/Article';
 import { ARTICLES_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
+import { ArticleSortField, ArticleType } from 'entities/Article/model/types/article';
+import { SortOrder } from 'shared/types/sortOrder';
 import { ArticlesSchema } from '../types/articlesSchema';
 import { fetchArticles } from '../services/fetchArticles/fetchArticles';
 
@@ -28,6 +30,11 @@ const articlesSlice = createSlice({
     page: 1,
     hasMore: true,
     _inited: false,
+    limit: 9,
+    sort: ArticleSortField.CREATED_AT,
+    search: '',
+    order: 'asc',
+    type: ArticleType.ALL,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -43,20 +50,44 @@ const articlesSlice = createSlice({
       state.limit = view === ArticleView.VIEW_BIG ? 4 : 9;
       state._inited = true;
     },
+    setLimit: (state, action: PayloadAction<number>) => {
+      state.limit = action.payload;
+    },
+    setSort: (state, action: PayloadAction<ArticleSortField>) => {
+      state.sort = action.payload;
+    },
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload;
+    },
+    setOrder: (state, action: PayloadAction<SortOrder>) => {
+      state.order = action.payload;
+    },
+    setType: (state, action: PayloadAction<ArticleType>) => {
+      state.type = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticles.pending, (state) => {
+      .addCase(fetchArticles.pending, (state, action) => {
         state.error = undefined;
         state.isLoading = true;
+
+        if (action.meta.arg.replace) {
+          articlesAdapter.removeAll(state);
+        }
       })
       .addCase(fetchArticles.fulfilled, (
         state,
-        action: PayloadAction<Article[]>,
+        action,
       ) => {
         state.isLoading = false;
-        articlesAdapter.addMany(state, action.payload);
-        state.hasMore = action.payload.length > 0;
+        state.hasMore = action.payload.length >= state.limit;
+
+        if (action.meta.arg.replace) {
+          articlesAdapter.setAll(state, action.payload);
+        } else {
+          articlesAdapter.addMany(state, action.payload);
+        }
       })
       .addCase(fetchArticles.rejected, (state, action) => {
         state.isLoading = false;
