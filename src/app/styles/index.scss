@@ -19,3 +19,20 @@
   display: flex;
 }
 
+*::-webkit-scrollbar {
+  width: 12px;                    
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--card-background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--inverted-primary-color);                    
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+}
+
+
+

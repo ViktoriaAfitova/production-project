@@ -8,7 +8,7 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentSchema } from 'pages/ArticlesDetails';
+import { ArticleDetailsPageSchema } from 'pages/ArticlesDetails';
 import { CommentFormSchema } from 'features/CommentForm';
 import { ArticlesSchema } from 'pages/Articles';
 import { ScrollSchema } from 'widgets/Scroll/model/types/types';
@@ -22,9 +22,9 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleDetailsComments?: ArticleDetailsCommentSchema;
   commentForm?: CommentFormSchema;
   articles?: ArticlesSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

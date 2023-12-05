@@ -1,14 +1,14 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eyeIcon.svg';
 import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import style from './ArticleItem.module.scss';
 import {
   Article, ArticleBlockType, ArticleTextBlock, ArticleView,
@@ -19,19 +19,16 @@ interface ArticleItemProps {
   className?: string;
   article: Article;
   view: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleItem = memo(({
   className,
   article,
   view,
+  target,
 }: ArticleItemProps) => {
   const { t } = useTranslation('article');
-  const navigate = useNavigate();
-
-  const onOpenArticle = useCallback(() => {
-    navigate(RoutePath.articleDetails + article.id);
-  }, [article.id, navigate]);
 
   const types = (
     <Text
@@ -78,12 +75,17 @@ export const ArticleItem = memo(({
             />
           )}
           <div className={style.footer}>
-            <Button
-              onClick={onOpenArticle}
-              theme={ButtonTheme.Outline}
+            <AppLink
+              target={target}
+              to={RoutePath.articleDetails + article.id}
             >
-              {t('Read more...')}
-            </Button>
+              <Button
+                theme={ButtonTheme.Outline}
+              >
+                {t('Read more...')}
+              </Button>
+            </AppLink>
+
             {views}
           </div>
         </Card>
@@ -92,9 +94,12 @@ export const ArticleItem = memo(({
   }
 
   return (
-    <div className={classNames(style.articleItem, {}, [className, style[view]])}>
+    <AppLink
+      target={target}
+      to={RoutePath.articleDetails + article.id}
+      className={classNames(style.articleItem, {}, [className, style[view]])}
+    >
       <Card
-        onClick={onOpenArticle}
         className={style.card}
       >
         <div className={style.imageWrapper}>
@@ -111,6 +116,6 @@ export const ArticleItem = memo(({
         </div>
         <Text text={article.title} className={style.title} />
       </Card>
-    </div>
+    </AppLink>
   );
 });
