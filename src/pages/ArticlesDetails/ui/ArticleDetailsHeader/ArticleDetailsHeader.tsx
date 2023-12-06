@@ -7,7 +7,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 import { selectEditArticle } from 'pages/ArticlesDetails/model/selectors/selectors';
 import { selectArticleDetails } from 'entities/Article';
-import style from './ArticleDetailsheader.module.scss';
+import style from './ArticleDetailsHeader.module.scss';
 
 interface ArticleDetailsHeaderProps {
   className?: string;
