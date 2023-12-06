@@ -2,14 +2,12 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useEffect } from 'react';
 import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { CommentList } from 'entities/Comment';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducerList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useDispatch, useSelector } from 'react-redux';
 import { CommentForm } from 'features/CommentForm';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 import style from './ArticleDetails.module.scss';
 import { selectArticleComments } from '../model/slice/articleDetailsCommentSlice';
@@ -19,6 +17,7 @@ import { articleComment } from '../model/services/ArticleComment/articleComment'
 import { selectArticleRecommendations } from '../model/slice/articleDetailsRecommendationSlice';
 import { fetchArticleRecommendations } from '../model/services/fetchArticlesRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../model/slice';
+import { ArticleDetailsHeader } from './ArticleDetailsHeader/ArticleDetailsHeader';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -36,11 +35,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
   const articleCommentsIsLoading = useSelector(selectArticleCommentsIsLoading);
   const articleRecommendations = useSelector(selectArticleRecommendations.selectAll);
   const articleRecommendationsIsLoading = useSelector(selectArticleRecommendationsIsLoading);
-  const navigate = useNavigate();
-
-  const onBackToArticles = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
 
   const onSendText = useCallback((text: string) => {
     dispatch(articleComment(text));
@@ -63,12 +57,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(style.articleDetails, {}, [className])}>
-        <Button
-          onClick={onBackToArticles}
-          theme={ButtonTheme.Outline}
-        >
-          {t('Back to articles')}
-        </Button>
+        <ArticleDetailsHeader />
         <ArticleDetails id={id} />
         <Text
           size={TextSize.L}
