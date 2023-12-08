@@ -18,6 +18,8 @@ interface PageProps {
   onScrollEnd?: () => void;
 }
 
+export const PAGE_ID = 'PAGE_ID';
+
 export const Page = memo(({
   className,
   children,
@@ -53,6 +55,7 @@ export const Page = memo(({
       ref={wrapperRef}
       className={classNames(style.page, {}, [className])}
       onScroll={onScroll}
+      id={PAGE_ID}
     >
       {children}
       {onScrollEnd ? <div className={style.trigger} ref={triggerRef} /> : null}
