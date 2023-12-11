@@ -1,4 +1,5 @@
-import { StoreProvider } from 'app/providers/StoreProvider'; import { render } from 'react-dom';
+import { StoreProvider } from 'app/providers/StoreProvider';
+import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { ThemeProvider } from 'app/providers';
