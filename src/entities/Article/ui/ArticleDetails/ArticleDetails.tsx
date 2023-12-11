@@ -16,6 +16,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eyeIcon.svg';
 import CalendarIcon from 'shared/assets/icons/calendarIcon.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { HorizontalStack, VerticalStack } from 'shared/ui/Stack';
 import style from './ArticleDetails.module.scss';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
@@ -99,27 +100,30 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <div className={style.avatarWrapper}>
+        <HorizontalStack justify="center" max>
           <Avatar
             size={200}
             src={article?.img}
             className={style.avatar}
           />
-        </div>
-        <Text
-          className={style.title}
-          title={article?.title}
-          text={article?.subtitle}
-          size={TextSize.L}
-        />
-        <div className={style.articleInfo}>
-          <Icon className={style.icon} Svg={EyeIcon} />
-          <Text text={String(article?.views)} />
-        </div>
-        <div className={style.articleInfo}>
-          <Icon className={style.icon} Svg={CalendarIcon} />
-          <Text text={article?.createdAt} />
-        </div>
+        </HorizontalStack>
+        <VerticalStack gap="4" max>
+          <Text
+            className={style.title}
+            title={article?.title}
+            text={article?.subtitle}
+            size={TextSize.L}
+          />
+          {' '}
+          <HorizontalStack gap="8">
+            <Icon className={style.icon} Svg={EyeIcon} />
+            <Text text={String(article?.views)} />
+          </HorizontalStack>
+          <HorizontalStack gap="8">
+            <Icon className={style.icon} Svg={CalendarIcon} />
+            <Text text={article?.createdAt} />
+          </HorizontalStack>
+        </VerticalStack>
         {article?.blocks.map(renderBlock)}
       </>
     );
@@ -127,7 +131,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(style.articleDetails, {}, [className])}>{content}</div>
+      <VerticalStack gap="16" className={classNames(style.articleDetails, {}, [className])}>
+        {content}
+      </VerticalStack>
     </DynamicModuleLoader>
   );
 });

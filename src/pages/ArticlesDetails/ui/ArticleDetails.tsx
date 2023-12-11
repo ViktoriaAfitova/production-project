@@ -9,6 +9,7 @@ import { DynamicModuleLoader, ReducerList } from 'shared/components/DynamicModul
 import { useDispatch, useSelector } from 'react-redux';
 import { CommentForm } from 'features/CommentForm';
 import { Page } from 'widgets/Page/Page';
+import { VerticalStack } from 'shared/ui/Stack';
 import style from './ArticleDetails.module.scss';
 import { selectArticleComments } from '../model/slice/articleDetailsCommentSlice';
 import { selectArticleCommentsIsLoading, selectArticleRecommendationsIsLoading } from '../model/selectors/selectors';
@@ -57,30 +58,32 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(style.articleDetails, {}, [className])}>
-        <ArticleDetailsHeader />
-        <ArticleDetails id={id} />
-        <Text
-          size={TextSize.L}
-          className={style.title}
-          title={t('Recommend')}
-        />
-        <ArticleList
-          view={ArticleView.VIEW_SMALL}
-          className={style.recommendations}
-          articles={articleRecommendations}
-          isLoading={articleRecommendationsIsLoading}
-          target="_blank"
-        />
-        <Text
-          size={TextSize.L}
-          className={style.title}
-          title={t('Comments')}
-        />
-        <CommentForm onSendText={onSendText} />
-        <CommentList
-          isLoading={articleCommentsIsLoading}
-          comments={articleComments}
-        />
+        <VerticalStack max gap="16">
+          <ArticleDetailsHeader />
+          <ArticleDetails id={id} />
+          <Text
+            size={TextSize.L}
+            className={style.title}
+            title={t('Recommend')}
+          />
+          <ArticleList
+            view={ArticleView.VIEW_SMALL}
+            className={style.recommendations}
+            articles={articleRecommendations}
+            isLoading={articleRecommendationsIsLoading}
+            target="_blank"
+          />
+          <Text
+            size={TextSize.L}
+            className={style.title}
+            title={t('Comments')}
+          />
+          <CommentForm onSendText={onSendText} />
+          <CommentList
+            isLoading={articleCommentsIsLoading}
+            comments={articleComments}
+          />
+        </VerticalStack>
       </Page>
     </DynamicModuleLoader>
   );

@@ -9,6 +9,7 @@ import { DynamicModuleLoader, ReducerList } from 'shared/components/DynamicModul
 import style from './CommentForm.module.scss';
 import { selectError, selectText } from '../../model/selectors/selectors';
 import { commentFormActions, commentFormReducer } from '../../model/slice/commentFormSlice';
+import { HorizontalStack } from 'shared/ui/Stack';
 
 export interface CommentFormProps {
   className?: string;
@@ -36,7 +37,11 @@ const CommentForm = memo(({ className, onSendText }: CommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(style.commentForm, {}, [className])}>
+      <HorizontalStack
+        max
+        justify="between"
+        className={classNames(style.commentForm, {}, [className])}
+      >
         <Input
           className={style.input}
           placeholder={t('Enter comment text')}
@@ -49,7 +54,7 @@ const CommentForm = memo(({ className, onSendText }: CommentFormProps) => {
         >
           {t('Send')}
         </Button>
-      </div>
+      </HorizontalStack>
     </DynamicModuleLoader>
   );
 });

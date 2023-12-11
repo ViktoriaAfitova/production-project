@@ -9,7 +9,7 @@ import {
   profileActions, selectProfile, selectReadonly, updateProfileData,
 } from 'entities/Profile';
 import { getUserAuthData } from 'entities/User';
-import style from './ProfileHeader.module.scss';
+import { HorizontalStack } from 'shared/ui/Stack';
 
 interface ProfileHeaderProps {
   className?: string;
@@ -37,39 +37,39 @@ export const ProfileHeader = ({ className }: ProfileHeaderProps) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(style.profileHeader, {}, [className])}>
+    <HorizontalStack
+      max
+      justify="between"
+      className={classNames('', {}, [className])}
+    >
       <Text title={t('Profile')} />
       {canEdit && (
-        <div className={style.wrapperButtons}>
+        <div>
           {readonly ? (
             <Button
-              className={style.editButton}
               theme={ButtonTheme.Outline}
               onClick={onEdit}
             >
               {t('Edit')}
             </Button>
           ) : (
-            <>
+            <HorizontalStack gap="8">
               <Button
-                className={style.editButton}
                 theme={ButtonTheme.OutlineRed}
                 onClick={onCancel}
               >
                 {t('Cancel')}
               </Button>
               <Button
-                className={style.saveButton}
                 theme={ButtonTheme.Outline}
                 onClick={onSave}
               >
                 {t('Save')}
               </Button>
-            </>
+            </HorizontalStack>
           )}
         </div>
       )}
-
-    </div>
+    </HorizontalStack>
   );
 };

@@ -7,7 +7,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 import { selectEditArticle } from 'pages/ArticlesDetails/model/selectors/selectors';
 import { selectArticleDetails } from 'entities/Article';
-import style from './ArticleDetailsHeader.module.scss';
+import { HorizontalStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsHeaderProps {
   className?: string;
@@ -30,22 +30,24 @@ export const ArticleDetailsHeader = ({
   }, [article?.id, navigate]);
 
   return (
-    <div className={classNames(style.header, {}, [className])}>
+    <HorizontalStack
+      max
+      justify="between"
+    >
       <Button
         onClick={onBackToArticles}
         theme={ButtonTheme.Outline}
       >
         {t('Back to articles')}
       </Button>
-      {/* {edit && ( */}
-      <Button
-        className={style.editButton}
-        onClick={editArticle}
-        theme={ButtonTheme.Outline}
-      >
-        {t('Edit')}
-      </Button>
-      {/* )} */}
-    </div>
+      {edit && (
+        <Button
+          onClick={editArticle}
+          theme={ButtonTheme.Outline}
+        >
+          {t('Edit')}
+        </Button>
+      )}
+    </HorizontalStack>
   );
 };

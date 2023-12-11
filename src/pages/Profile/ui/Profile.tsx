@@ -14,8 +14,9 @@ import { Currency } from 'entities/Currency/model/types/currency';
 import { Country } from 'entities/Country/model/types/country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useParams } from 'react-router-dom';
-import { ProfileHeader } from '../components/ProfileHeader';
 import { Page } from 'widgets/Page/Page';
+import { VerticalStack } from 'shared/ui/Stack';
+import { ProfileHeader } from '../components/ProfileHeader';
 
 const reducers: ReducerList = {
   profile: profileReducer,
@@ -86,28 +87,30 @@ const ProfilePage = ({ className }: ProfileProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames('', {}, [className])}>
-        <ProfileHeader />
-        {validateErrors?.length && validateErrors.map((error: ValidateProfileError) => (
-          <Text
-            key={error}
-            theme={TextTheme.ERROR}
-            text={validateErrorTranslates[error]}
+        <VerticalStack max gap="16">
+          <ProfileHeader />
+          {validateErrors?.length && validateErrors.map((error: ValidateProfileError) => (
+            <Text
+              key={error}
+              theme={TextTheme.ERROR}
+              text={validateErrorTranslates[error]}
+            />
+          ))}
+          <ProfileCard
+            data={formData}
+            isLoading={loading}
+            error={error}
+            readonly={readonly}
+            onChangeFirstname={onChangeFirstname}
+            onChangeLastname={onChangeLastname}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeUsername={onChangeUsername}
+            onChangeAvatar={onChangeAvatar}
+            onChangeCurrency={onChangeCurrency}
+            onChangeCountry={onChangeCountry}
           />
-        ))}
-        <ProfileCard
-          data={formData}
-          isLoading={loading}
-          error={error}
-          readonly={readonly}
-          onChangeFirstname={onChangeFirstname}
-          onChangeLastname={onChangeLastname}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeUsername={onChangeUsername}
-          onChangeAvatar={onChangeAvatar}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-        />
+        </VerticalStack>
       </Page>
     </DynamicModuleLoader>
   );

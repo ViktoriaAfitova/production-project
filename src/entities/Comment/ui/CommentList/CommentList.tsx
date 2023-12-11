@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text/Text';
-import style from './CommentList.module.scss';
+import { VerticalStack } from 'shared/ui/Stack';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { Comment } from '../../model/types/comment';
 
@@ -17,26 +17,25 @@ export const CommentList = memo(({ className, comments, isLoading }: CommentList
 
   if (isLoading) {
     return (
-      <div className={classNames(style.comments, {}, [className])}>
+      <VerticalStack gap="16" max className={classNames('', {}, [className])}>
         <CommentCard isLoading />
         <CommentCard isLoading />
         <CommentCard isLoading />
-      </div>
+      </VerticalStack>
     );
   }
 
   return (
-    <div className={classNames(style.comments, {}, [className])}>
+    <VerticalStack gap="16" max className={classNames('', {}, [className])}>
       {comments?.length
         ? comments?.map((comment) => (
           <CommentCard
             isLoading={isLoading}
-            className={style.comment}
             comment={comment}
             key={comment.id}
           />
         ))
         : <Text text={t('Comment is absent')} />}
-    </div>
+    </VerticalStack>
   );
 });
