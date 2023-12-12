@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'widgets/Page/Page';
 
 const HomePage = () => {
   const { t } = useTranslation('home');
@@ -10,9 +11,9 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <Page>
       {t('Home')}
-    </div>
+    </Page>
   );
 };
 

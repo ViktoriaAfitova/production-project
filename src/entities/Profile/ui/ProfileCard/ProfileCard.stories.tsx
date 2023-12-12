@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import avatar from 'shared/assets/tests/storybookImage.jpg';
-import { ProfileCard } from './ProfileCard/ProfileCard';
+import { ProfileCard } from './ProfileCard';
 
 export default {
   title: 'entities/ProCard',
