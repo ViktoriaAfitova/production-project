@@ -9,6 +9,8 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkColor } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import style from './Navbar.module.scss';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 
 interface NavbarProps {
   className?: string;
@@ -49,14 +51,21 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         >
           {t('Create article')}
         </AppLink>
-        <Button
-          theme={ButtonTheme.ClearInverted}
-          className={style.links}
-          onClick={onLogout}
-        >
-          {t('Log out')}
-        </Button>
-        <LoginModal isVisible={authModalVisible} onClose={onCloseModal} />
+        <Dropdown
+          direction="bottom left"
+          className={style.dropdown}
+          items={[
+            {
+              content: t('Profile'),
+              href: RoutePath.profile + authData.id,
+            },
+            {
+              content: t('Log out'),
+              onClick: onLogout,
+            },
+          ]}
+          trigger={<Avatar size={30} src={authData.avatar} />}
+        />
       </header>
     );
   }

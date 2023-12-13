@@ -1,6 +1,7 @@
 import { Fragment, ReactNode } from 'react';
 import { Listbox as Select } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { DropdownDirection } from 'shared/types/direction';
 import style from './SelectBox.module.scss';
 import { Button } from '../Button/Button';
 import { HorizontalStack } from '../Stack';
@@ -10,8 +11,6 @@ export interface SelectBoxItem {
   content: ReactNode;
   disabled?: boolean;
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 export interface SelectBoxProps {
   items?: SelectBoxItem[];
@@ -25,8 +24,10 @@ export interface SelectBoxProps {
 }
 
 const directionMapper: Record<DropdownDirection, string> = {
-  bottom: style.optionsBottom,
-  top: style.optionsTop,
+  'bottom left': style.optionsBottomLeft,
+  'bottom right': style.optionsBottomRight,
+  'top right': style.optionsTopRight,
+  'top left': style.optionsTopLeft,
 };
 
 export function SelectBox({
@@ -36,7 +37,7 @@ export function SelectBox({
   defaultValue,
   onChange,
   readonly,
-  direction = 'bottom',
+  direction = 'bottom right',
   label,
 }: SelectBoxProps) {
   const styles = [directionMapper[direction]];
