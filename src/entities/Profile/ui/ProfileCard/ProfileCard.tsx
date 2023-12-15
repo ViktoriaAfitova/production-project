@@ -10,7 +10,7 @@ import { CurrencySelect } from 'entities/Currency';
 import { CountrySelect } from 'entities/Country/ui/CountrySelect/CountrySelect';
 import { HorizontalStack, VerticalStack } from 'shared/ui/Stack';
 import style from './ProfileCard.module.scss';
-import { Profile } from '../../model/types/profile';
+import { Profile } from '../../model/types';
 
 interface ProfileCardProps {
   className?: string;

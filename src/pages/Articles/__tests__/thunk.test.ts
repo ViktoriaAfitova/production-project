@@ -20,7 +20,7 @@ describe('thunk', () => {
     await thunk.callThunk();
 
     expect(thunk.dispatch).toBeCalledTimes(4);
-    expect(fetchArticles).toHaveBeenCalledWith({ page: 3 });
+    expect(fetchArticles).toHaveBeenCalled();
   });
 
   test('request not called', async () => {

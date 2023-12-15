@@ -10,5 +10,6 @@
   "by creation date": "by creation date",
   "by title": "by title",
   "by number of views": "by number of views",
-  "Nothing not found": "Nothing not found"
+  "Nothing not found": "Nothing not found",
+  "Error loading articles": "Error loading articles"
 }

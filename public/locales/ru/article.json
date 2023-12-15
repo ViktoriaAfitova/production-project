@@ -10,5 +10,6 @@
   "by creation date": "по дате создания",
   "by title": "по заоловку",
   "by number of views": "по количеству просмотров",
-  "Nothing not found": "Ничего не найдено"
+  "Nothing not found": "Ничего не найдено",
+  "Error loading articles": "Ошибка при загрузке статей"
 }

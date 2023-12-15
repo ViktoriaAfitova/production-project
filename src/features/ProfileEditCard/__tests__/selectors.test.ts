@@ -1,10 +1,15 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Currency } from 'entities/Currency/model/types/currency';
 import { Country } from 'entities/Country/model/types/country';
+import { ValidateProfileError } from '../store/types';
 import {
-  selectProfile, selectLoading, selectError, selectReadonly, selectForm, selectValidateErrors,
-} from '../model/selectors/selectors';
-import { ValidateProfileError } from '../model/types/profile';
+  selectProfile,
+  selectError,
+  selectForm,
+  selectLoading,
+  selectReadonly,
+  selectValidateErrors,
+} from '../store/selectors';
 
 const data = {
   firstName: 'Viki',

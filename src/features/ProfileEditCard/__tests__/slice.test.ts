@@ -1,8 +1,8 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { profileActions, profileReducer } from '../model/slice/profileSlice';
-import { ProfileSchema, ValidateProfileError } from '../model/types/profile';
-import { updateProfileData } from '../model/services/updateProfileData/updateProfileData';
+import { ProfileSchema, profileActions, profileReducer } from '../store';
+import { ValidateProfileError } from '../store/types';
+import { updateProfileData } from '../store/thunk';
 
 const data = {
   firstName: 'Viki',
