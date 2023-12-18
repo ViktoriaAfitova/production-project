@@ -98,6 +98,7 @@ export const ProfileEditCard = ({
             key={error}
             theme={TextTheme.ERROR}
             text={validateErrorTranslates[error]}
+            data-testid="ProfileEditCard.Error"
           />
         ))}
         <ProfileCard

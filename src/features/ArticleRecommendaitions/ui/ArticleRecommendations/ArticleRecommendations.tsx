@@ -16,7 +16,7 @@ export const ArticleRecommendations = memo(({
   const { t } = useTranslation();
   const { isLoading, data: articles, error } = useArticleRecommendations(3);
 
-  if (isLoading || error) {
+  if (isLoading || error || !articles) {
     return null;
   }
 
@@ -30,6 +30,7 @@ export const ArticleRecommendations = memo(({
         view={ArticleView.VIEW_SMALL}
         articles={articles}
         target="_blank"
+        virtualized={false}
       />
     </VerticalStack>
   );
