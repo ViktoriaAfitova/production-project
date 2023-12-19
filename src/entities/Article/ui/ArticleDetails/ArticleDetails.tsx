@@ -114,7 +114,6 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
             text={article?.subtitle}
             size={TextSize.L}
           />
-          {' '}
           <HorizontalStack gap="8">
             <Icon className={style.icon} Svg={EyeIcon} />
             <Text text={String(article?.views)} />
@@ -131,7 +130,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <VerticalStack gap="16" className={classNames(style.articleDetails, {}, [className])}>
+      <VerticalStack gap="16" max className={classNames(style.articleDetails, {}, [className])}>
         {content}
       </VerticalStack>
     </DynamicModuleLoader>

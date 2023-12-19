@@ -37,7 +37,7 @@ export const ArticleDetailsComments = ({
   }, [dispatch]);
 
   return (
-    <VerticalStack gap="16" className={classNames('', {}, [className])}>
+    <VerticalStack gap="16" max className={classNames('', {}, [className])}>
       <Text
         size={TextSize.L}
         title={t('Comments')}

@@ -528,6 +528,12 @@
       "userId": "1",
       "text": "ggggg",
       "id": "KLXayks"
+    },
+    {
+      "articleId": "13",
+      "userId": "1",
+      "text": "hello",
+      "id": "YjT6g3w"
     }
   ],
   "users": [
@@ -535,21 +541,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://png.pngtree.com/png-vector/20190130/ourmid/pngtree-simple-white-technology-computer-keyboard-element-design-png-image_579856.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "1234",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "12345",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
