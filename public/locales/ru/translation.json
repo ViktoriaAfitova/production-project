@@ -15,5 +15,6 @@
   "You entered an incorrect username or password": "Вы ввели неверный логин или пароль",
   "Log out": "Выйти",
   "Profile": "Профайл",
-  "Edit": "Редактировать"
+  "Edit": "Редактировать",
+  "You do not have access to this page": "У вас нет доступа к этой странице"
 }

@@ -1,9 +1,9 @@
 export {
-  getUserAuthData,
-} from './model/selectors/getUserAuthData';
-
-export {
+  selectUserAuthData,
   selectMounted,
+  selectRoles,
+  isUserAdmin,
+  isUserManager,
 } from './model/selectors/selectors';
 
 export {
@@ -14,4 +14,5 @@ export {
 export {
   UserSchema,
   User,
+  UserRole,
 } from './model/types/user';

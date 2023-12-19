@@ -3,7 +3,7 @@ import { AppLink, AppLinkColor } from 'shared/ui/AppLink/AppLink';
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
+import { selectUserAuthData } from 'entities/User';
 import { SidebarLinks } from '../../model/types';
 import style from './SidebarItem.module.scss';
 
@@ -15,7 +15,7 @@ interface SidebarItemProps {
 
 export const SidebarItem = memo(({ link, collapsed, className }: SidebarItemProps) => {
   const { t } = useTranslation();
-  const isAuth = useSelector(getUserAuthData);
+  const isAuth = useSelector(selectUserAuthData);
 
   if (link.authOnly && !isAuth) {
     return null;

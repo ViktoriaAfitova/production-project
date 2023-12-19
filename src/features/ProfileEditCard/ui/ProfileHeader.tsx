@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { getUserAuthData } from 'entities/User';
 import { HorizontalStack } from 'shared/ui/Stack';
 import { selectProfile, selectReadonly } from 'features/ProfileEditCard/store/selectors';
 import { profileActions } from 'features/ProfileEditCard/store';
 import { updateProfileData } from 'features/ProfileEditCard/store/thunk';
+import { selectUserAuthData } from 'entities/User';
 
 interface ProfileHeaderProps {
   className?: string;
@@ -18,7 +18,7 @@ interface ProfileHeaderProps {
 export const ProfileHeader = ({ className }: ProfileHeaderProps) => {
   const { t } = useTranslation('profile');
 
-  const authData = useSelector(getUserAuthData);
+  const authData = useSelector(selectUserAuthData);
   const profile = useSelector(selectProfile);
   const canEdit = authData?.id === profile?.id;
   const readonly = useSelector(selectReadonly);

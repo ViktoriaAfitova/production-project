@@ -15,5 +15,6 @@
   "You entered an incorrect username or password": "You entered an incorrect username or password",
   "Log out": "Log out",
   "Profile": "Profile",
-  "Edit": "Edit"
+  "Edit": "Edit",
+  "You do not have access to this page": "You do not have access to this page"
 }

@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { selectArticleDetails } from 'entities/Article';
-import { getUserAuthData } from 'entities/User';
+import { selectUserAuthData } from 'entities/User';
 
 export const selectArticleCommentsIsLoading = (state: StateSchema) => {
   return state.articleDetailsPage?.comments?.isLoading;
@@ -18,7 +18,7 @@ export const selectArticleRecommendationsError = (state: StateSchema) => {
 
 export const selectEditArticle = createSelector(
   selectArticleDetails,
-  getUserAuthData,
+  selectUserAuthData,
   (article, user) => {
     if (!article || !user) {
       return false;

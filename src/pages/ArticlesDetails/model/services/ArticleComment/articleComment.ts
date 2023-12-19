@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
-import { getUserAuthData } from 'entities/User';
 import { selectArticleDetails } from 'entities/Article/model/selectors/selectors';
+import { selectUserAuthData } from 'entities/User';
 import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 export const articleComment = createAsyncThunk<
@@ -18,7 +18,7 @@ export const articleComment = createAsyncThunk<
       getState,
     } = thunkApi;
 
-    const userData = getUserAuthData(getState());
+    const userData = selectUserAuthData(getState());
     const article = selectArticleDetails(getState());
 
     if (!userData || !text || !article) {
