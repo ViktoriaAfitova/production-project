@@ -9,7 +9,7 @@ import { selectEditArticle } from 'pages/ArticlesDetails/model/selectors/selecto
 import { selectArticleDetails } from 'entities/Article';
 import { HorizontalStack } from 'shared/ui/Stack';
 
-interface ArticleDetailsHeaderProps {
+export interface ArticleDetailsHeaderProps {
   className?: string;
 }
 
@@ -33,6 +33,7 @@ export const ArticleDetailsHeader = ({
     <HorizontalStack
       max
       justify="between"
+      className={classNames('', {}, [className])}
     >
       <Button
         onClick={onBackToArticles}

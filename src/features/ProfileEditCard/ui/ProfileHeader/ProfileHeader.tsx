@@ -11,7 +11,7 @@ import { profileActions } from 'features/ProfileEditCard/store';
 import { updateProfileData } from 'features/ProfileEditCard/store/thunk';
 import { selectUserAuthData } from 'entities/User';
 
-interface ProfileHeaderProps {
+export interface ProfileHeaderProps {
   className?: string;
 }
 

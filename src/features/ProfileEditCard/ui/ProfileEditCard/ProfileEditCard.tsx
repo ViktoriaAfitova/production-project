@@ -15,19 +15,19 @@ import {
   selectLoading,
   selectReadonly,
   selectValidateErrors,
-} from '../store/selectors';
-import { profileActions, profileReducer } from '../store';
-import { ValidateProfileError } from '../store/types';
-import { fetchProfileData } from '../store/thunk';
-import { ProfileHeader } from './ProfileHeader';
+} from '../../store/selectors';
+import { profileActions, profileReducer } from '../../store';
+import { ValidateProfileError } from '../../store/types';
+import { fetchProfileData } from '../../store/thunk';
+import { ProfileHeader } from '../ProfileHeader/ProfileHeader';
 
 const reducers: ReducerList = {
   profile: profileReducer,
 };
 
-interface ProfileEditCardProps {
+export interface ProfileEditCardProps {
   className?: string;
-  id: string | undefined;
+  id?: string;
 }
 
 export const ProfileEditCard = ({

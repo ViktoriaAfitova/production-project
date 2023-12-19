@@ -6,7 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { VerticalStack } from 'shared/ui/Stack';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 
-interface ArticleRecommendationsProps {
+export interface ArticleRecommendationsProps {
   className?: string;
 }
 

@@ -5,7 +5,7 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { screen } from '@testing-library/react';
 import { ProfileEditCard } from './ProfileEditCard';
-import { profileReducer } from '../store';
+import { profileReducer } from '../../store';
 import { api } from 'shared/api/api';
 
 const profile: Profile = {

@@ -80,6 +80,7 @@ export const ArticleList = memo(({
   }
 
   return (
+    // @ts-ignore
     <WindowScroller
       scrollElement={document.getElementById(PAGE_ID) as Element}
     >
@@ -92,11 +93,13 @@ export const ArticleList = memo(({
         scrollTop,
       }) => (
         <div
+        // @ts-ignore
           ref={registerChild}
           className={classNames(style.articleList, {}, [className, style[view]])}
         >
           {virtualized
             ? (
+              // @ts-ignore
               <List
                 height={height ?? 700}
                 rowCount={rowCount}

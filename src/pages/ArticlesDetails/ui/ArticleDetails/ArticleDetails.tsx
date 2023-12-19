@@ -24,14 +24,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
   const { t } = useTranslation('article');
   const { id } = useParams<{ id: string }>();
 
-  if (!id) {
-    return (
-      <Page className={classNames(style.articleDetails, {}, [className])}>
-        {t('Article not found')}
-      </Page>
-    );
-  }
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(style.articleDetails, {}, [className])}>

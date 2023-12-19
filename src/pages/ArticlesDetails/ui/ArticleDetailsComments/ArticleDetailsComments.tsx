@@ -6,16 +6,17 @@ import {
   fetchCommentsByArticleId,
 } from 'pages/ArticlesDetails/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { selectArticleComments } from 'pages/ArticlesDetails/model/slice/articleDetailsCommentSlice';
-import { useCallback, useEffect } from 'react';
+import { Suspense, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { VerticalStack } from 'shared/ui/Stack';
 import { Text, TextSize } from 'shared/ui/Text/Text';
+import { Loader } from 'widgets/Loader/ui/Loader';
 
-interface ArticleDetailsCommentsProps {
+export interface ArticleDetailsCommentsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 export const ArticleDetailsComments = ({
@@ -42,7 +43,9 @@ export const ArticleDetailsComments = ({
         size={TextSize.L}
         title={t('Comments')}
       />
-      <CommentForm onSendText={onSendText} />
+      <Suspense fallback={<Loader />}>
+        <CommentForm onSendText={onSendText} />
+      </Suspense>
       <CommentList
         isLoading={articleCommentsIsLoading}
         comments={articleComments}
