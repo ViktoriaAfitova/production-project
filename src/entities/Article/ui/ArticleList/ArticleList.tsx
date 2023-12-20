@@ -5,8 +5,9 @@ import { ArticleItem } from 'entities/Article/ui/ArticleItem/ArticleItem';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 import { PAGE_ID } from 'widgets/Page/Page';
+import { ArticleView } from '../../model/constants/constants';
 import style from './ArticleList.module.scss';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import { ArticleItemSkeleton } from '../ArticleItem/ArticleItemSkeleton';
 
 interface ArticleListProps {

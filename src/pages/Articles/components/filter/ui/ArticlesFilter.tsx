@@ -1,7 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
-import { ArticleSortField, ArticleView, ArticleViewSwitcher } from 'entities/Article';
+import {
+  ArticleSortField,
+  ArticleType,
+  ArticleView,
+  ArticleViewSwitcher,
+} from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import {
@@ -14,7 +19,6 @@ import { SortArticle } from 'features/SortArticle';
 import { SortOrder } from 'shared/types/sortOrder';
 import { fetchArticles } from 'pages/Articles/model/services/fetchArticles/fetchArticles';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
-import { ArticleType } from 'entities/Article/model/types/article';
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
 import style from './ArticlesFilter.module.scss';
 

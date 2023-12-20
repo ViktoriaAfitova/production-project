@@ -3,12 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'widgets/Loader/ui/Loader';
-import { Country } from 'entities/Country/model/types/country';
-import { Currency } from 'entities/Currency/model/types/currency';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { CurrencySelect } from 'entities/Currency';
+import { Currency, CurrencySelect } from 'entities/Currency';
 import { CountrySelect } from 'entities/Country/ui/CountrySelect/CountrySelect';
 import { HorizontalStack, VerticalStack } from 'shared/ui/Stack';
+import { Country } from 'entities/Country';
 import style from './ProfileCard.module.scss';
 import { Profile } from '../../model/types';
 

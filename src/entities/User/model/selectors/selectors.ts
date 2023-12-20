@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { UserRole } from '../types/user';
+import { UserRole } from '../constants/constants';
 
 export const selectUserAuthData = (state: StateSchema) => state.user.authData;
 export const selectMounted = (state: StateSchema) => state.user._mounted;

@@ -4,9 +4,13 @@ import {
   createSlice,
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleView } from 'entities/Article';
+import {
+  Article,
+  ArticleView,
+  ArticleSortField,
+  ArticleType,
+} from 'entities/Article';
 import { ARTICLES_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
-import { ArticleSortField, ArticleType } from 'entities/Article/model/types/article';
 import { SortOrder } from 'shared/types/sortOrder';
 import { ArticlesSchema } from '../types/articlesSchema';
 import { fetchArticles } from '../services/fetchArticles/fetchArticles';

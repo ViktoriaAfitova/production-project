@@ -1,7 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Currency } from 'entities/Currency/model/types/currency';
-import { Country } from 'entities/Country/model/types/country';
-import { ValidateProfileError } from '../store/types';
+import { Currency } from 'entities/Currency/model/constants/constants';
+import { Country } from 'entities/Country';
 import {
   selectProfile,
   selectError,
@@ -10,6 +9,7 @@ import {
   selectReadonly,
   selectValidateErrors,
 } from '../store/selectors';
+import { ValidateProfileError } from '../store/constants';
 
 const data = {
   firstName: 'Viki',

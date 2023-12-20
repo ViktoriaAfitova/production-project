@@ -1,11 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { ArticleView } from 'entities/Article/model/types/article';
 import horizontalLinesIcon from 'shared/assets/icons/horizontalLinesIcon.svg';
 import tileIcon from 'shared/assets/icons/tileIcon.svg';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleView } from '../../model/constants/constants';
 import style from './ArticleViewSwitcher.module.scss';
 
 export interface ArticleViewSwitcherProps {

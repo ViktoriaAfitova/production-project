@@ -1,8 +1,8 @@
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
-import { Currency } from 'entities/Currency/model/types/currency';
-import { Country } from 'entities/Country/model/types/country';
-import { ValidateProfileError } from '../store/types';
+import { Currency } from 'entities/Currency/model/constants/constants';
+import { Country } from 'entities/Country';
 import { fetchProfileData, updateProfileData, validateProfileData } from '../store/thunk';
+import { ValidateProfileError } from '../store/constants';
 
 const data = {
   firstName: 'Viki',

@@ -9,6 +9,7 @@ import { ProfileCard } from 'entities/Profile';
 import { DynamicModuleLoader, ReducerList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VerticalStack } from 'shared/ui/Stack';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { ValidateProfileError } from 'features/ProfileEditCard/store/constants';
 import {
   selectError,
   selectForm,
@@ -17,7 +18,6 @@ import {
   selectValidateErrors,
 } from '../../store/selectors';
 import { profileActions, profileReducer } from '../../store';
-import { ValidateProfileError } from '../../store/types';
 import { fetchProfileData } from '../../store/thunk';
 import { ProfileHeader } from '../ProfileHeader/ProfileHeader';
 

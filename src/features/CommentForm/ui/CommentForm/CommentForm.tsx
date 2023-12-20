@@ -6,10 +6,10 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { DynamicModuleLoader, ReducerList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { HorizontalStack } from 'shared/ui/Stack';
 import style from './CommentForm.module.scss';
 import { selectError, selectText } from '../../model/selectors/selectors';
 import { commentFormActions, commentFormReducer } from '../../model/slice/commentFormSlice';
-import { HorizontalStack } from 'shared/ui/Stack';
 
 export interface CommentFormProps {
   className?: string;
