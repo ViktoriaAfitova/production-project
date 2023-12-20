@@ -2,7 +2,7 @@
   "Back to articles": "Back to articles",
   "Edit": "Edit",
   "Error loading articles": "Error loading articles",
-  "Nothing not found": "",
+  "Nothing not found": "Nothing not found",
   "Read more": {
     "": {
       "": {
@@ -11,7 +11,7 @@
     }
   },
   "Search": "Search",
-  "Something went wrong": "",
+  "Something went wrong": "Something went wrong",
   "Sort by": "Sort by",
   "ascending": "ascending",
   "by": "by",
