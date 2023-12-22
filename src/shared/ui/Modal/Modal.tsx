@@ -1,11 +1,16 @@
 import {
   MutableRefObject,
-  ReactNode, useCallback, useEffect, useRef, useState,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 import { Modes, classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers';
 import style from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
 
 interface ModalProps {
   className?: string;
@@ -51,10 +56,6 @@ export const Modal = ({
     }
   }, [handleModalClose]);
 
-  const onContentClick = (event: React.MouseEvent) => {
-    event.stopPropagation();
-  };
-
   useEffect(() => {
     if (isVisible) {
       window.addEventListener('keydown', onKeyDown);
@@ -78,16 +79,11 @@ export const Modal = ({
   return (
     <Portal>
       <div className={classNames(style.modal, modes, [className, theme, 'appModal'])}>
+        <Overlay onClick={handleModalClose} />
         <div
-          className={style.overlay}
-          onClick={handleModalClose}
+          className={style.content}
         >
-          <div
-            className={style.content}
-            onClick={onContentClick}
-          >
-            {children}
-          </div>
+          {children}
         </div>
       </div>
     </Portal>

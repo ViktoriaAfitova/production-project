@@ -5,7 +5,8 @@
 @import "themes/orange";
 
 .app,
-.appModal {
+.appModal,
+.appDrawer {
   font: var(--font-m);
   color: var(--primary-color);
 }
