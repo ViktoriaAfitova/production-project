@@ -3,8 +3,10 @@ import { Listbox as Select } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/direction';
 import style from './SelectBox.module.scss';
-import { Button } from '../Button/Button';
-import { HorizontalStack } from '../Stack';
+import { Button } from '../../../Button/Button';
+import { HorizontalStack } from '../../../Stack';
+import { directionMapper } from '../../utils/utils';
+import popupStyle from '../../Popup.module.scss';
 
 export interface SelectBoxItem {
   value: string;
@@ -23,13 +25,6 @@ export interface SelectBoxProps {
   label?: string;
 }
 
-const directionMapper: Record<DropdownDirection, string> = {
-  'bottom left': style.optionsBottomLeft,
-  'bottom right': style.optionsBottomRight,
-  'top right': style.optionsTopRight,
-  'top left': style.optionsTopLeft,
-};
-
 export function SelectBox({
   className,
   items,
@@ -46,7 +41,7 @@ export function SelectBox({
       {label && <span>{`${label}>`}</span>}
       <Select
         as="div"
-        className={classNames(style.select, {}, [className])}
+        className={classNames(style.select, {}, [className, popupStyle.popup])}
         value={value}
         onChange={onChange}
         disabled={readonly}
@@ -54,7 +49,7 @@ export function SelectBox({
 
         <Select.Button
           disabled={readonly}
-          className={style.button}
+          className={popupStyle.button}
         >
           <Button disabled={readonly}>
             {value ?? defaultValue}
@@ -73,8 +68,8 @@ export function SelectBox({
                   className={classNames(
                     style.optionItem,
                     {
-                      [style.active]: active,
-                      [style.disabled]: item.disabled,
+                      [popupStyle.active]: active,
+                      [popupStyle.disabled]: item.disabled,
                     },
                   )}
                 >

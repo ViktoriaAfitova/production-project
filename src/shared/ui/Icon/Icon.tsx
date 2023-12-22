@@ -5,8 +5,9 @@ import style from './Icon.module.scss';
 interface IconProps {
   className?: string;
   Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+  inverted?: boolean;
 }
 
-export const Icon = memo(({ className, Svg }: IconProps) => (
-  <Svg className={classNames(style.icon, {}, [className])} />
+export const Icon = memo(({ className, Svg, inverted }: IconProps) => (
+  <Svg className={classNames(inverted ? style.inverted : style.icon, {}, [className])} />
 ));

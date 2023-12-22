@@ -1,0 +1,13 @@
+.optionsList {
+  background-color: var(--listbox-background);
+  position: absolute;
+  z-index: 10000;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px var(--listbox-background);
+}
+
+.optionItem {
+  padding: 10px 20px;
+}
+
+

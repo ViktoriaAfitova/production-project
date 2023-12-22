@@ -1,0 +1,19 @@
+.menuList {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-background);
+  position: absolute;
+  z-index: 10000;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+}
+
+.menuItem {
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}

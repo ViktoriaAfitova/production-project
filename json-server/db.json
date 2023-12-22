@@ -1,4 +1,38 @@
 {
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Notification 1",
+      "description": "Event happened",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Notification 2",
+      "description": "Event happened",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Notification 3",
+      "description": "Event happened",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Notification 4",
+      "description": "Event happened",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Notification 5",
+      "description": "Event happened",
+      "userId": "2"
+    }
+  ],
   "posts": [
     {
       "id": "1",
@@ -577,7 +611,7 @@
       "firstName": "Vikiffff",
       "lastName": "Afitova",
       "age": 15,
-      "currency": "EUR",
+      "currency": "USD",
       "country": "Belarus",
       "city": "Minsk",
       "username": "admin",
